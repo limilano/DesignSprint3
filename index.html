@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VR Ghost House</title>
+    <meta name="description" content="Basic Scene - A-Frame">
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <script>
+      AFRAME.registerComponent('modify-materials', {
+        init: function () {
+          // Wait for model to load.
+          this.el.addEventListener('model-loaded', () => {
+            // Grab the mesh / scene.
+            const obj = this.el.getObject3D('mesh');
+            // Go over the submeshes and modify materials we want.
+            obj.traverse(node => {
+              if (node.name.indexOf('ship') !== -1) {
+                node.material.color.set('red');
+              }
+            });
+          });
+        }
+      });
+    </script>
+    <!-- Fog for spooky atmosphere -->
+    <a-scene fog="type: linear; color: #333; near: 1; far: 9">
+      <a-assets>
+        <!-- <a-asset-item id="skull" src="https://cdn.glitch.global/26bf7397-7bbc-42fb-ae00-a175e607d9e0/Aztec%20skull.glb?v=1729539348590"></a-asset-item> -->
+        <a-asset-item id="pumpkin" src="pumpkin/scene.gltf"></a-asset-item>
+      </a-assets>
+      <!-- <a-entity position="3 0 0" gltf-model="#skull" modify-materials></a-entity> -->
+      <a-entity position="-2 0 0" gltf-model="#pumpkin" scale="1 1 1"></a-entity>
+      <!-- Floor -->
+      <a-plane position="0 0 0" rotation="-90 0 0" width="10" height="10" color="#222"></a-plane>
+      
+      <!-- Walls -->
+      <a-box position="0 2.5 -5" depth="0.1" height="5" width="10" color="gray"></a-box> <!-- Back Wall -->
+      <a-box position="-5 2.5 0" depth="0.1" height="5" width="10" rotation="0 90 0" color="gray"></a-box> <!-- Left Wall -->
+      <a-box position="5 2.5 0" depth="0.1" height="5" width="10" rotation="0 -90 0" color="gray"></a-box> <!-- Right Wall -->
+      <a-box position="0 2.5 5" depth="0.1" height="5" width="10" rotation="0 180 0" color="gray"></a-box> <!-- Front Wall with Door -->
+      
+      <!-- Door (just an opening in the front wall) -->
+      <a-box position="0 2.5 4.9" depth="0.1" height="2" width="3" color="#333"></a-box> <!-- Door Frame -->
+      
+      <!-- Ceiling -->
+      <a-plane position="0 5 0" rotation="90 0 0" width="10" height="10" color="#444"></a-plane>
+      <a-sound src="asylum_sound.mp3" autoplay="true" loop="true"></a-sound>
+      
+      <!-- Lighting -->
+      <a-light type="ambient" color="#555"></a-light> <!-- General low light for eerie atmosphere -->
+      <a-light type="point" intensity="0.7" distance="15" position="0 4 0"></a-light> <!-- Dim central light -->
+    </a-scene>
+  </body>
+</html>
