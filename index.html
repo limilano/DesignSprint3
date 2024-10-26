@@ -23,33 +23,52 @@
         }
       });
     </script>
+    
     <!-- Fog for spooky atmosphere -->
     <a-scene fog="type: linear; color: #333; near: 1; far: 9">
       <a-assets>
-        <!-- <a-asset-item id="skull" src="https://cdn.glitch.global/26bf7397-7bbc-42fb-ae00-a175e607d9e0/Aztec%20skull.glb?v=1729539348590"></a-asset-item> -->
-        <a-asset-item id="pumpkin" src="pumpkin/scene.gltf"></a-asset-item>
+        <a-asset-item id="monster_1" src="monster_1/scene.gltf"></a-asset-item>
+        <a-asset-item id="spider_web" src="spider_web/scene.gltf"></a-asset-item>
       </a-assets>
-      <!-- <a-entity position="3 0 0" gltf-model="#skull" modify-materials></a-entity> -->
-      <a-entity position="-2 0 0" gltf-model="#pumpkin" scale="1 1 1"></a-entity>
+      
+      <a-entity position="-2 0 0" gltf-model="#monster_1" scale="1 1 1"></a-entity>
+      
       <!-- Floor -->
       <a-plane position="0 0 0" rotation="-90 0 0" width="10" height="10" color="#222"></a-plane>
       
-      <!-- Walls -->
-      <a-box position="0 2.5 -5" depth="0.1" height="5" width="10" color="gray"></a-box> <!-- Back Wall -->
-      <a-box position="-5 2.5 0" depth="0.1" height="5" width="10" rotation="0 90 0" color="gray"></a-box> <!-- Left Wall -->
-      <a-box position="5 2.5 0" depth="0.1" height="5" width="10" rotation="0 -90 0" color="gray"></a-box> <!-- Right Wall -->
-      <a-box position="0 2.5 5" depth="0.1" height="5" width="10" rotation="0 180 0" color="gray"></a-box> <!-- Front Wall with Door -->
+      <!-- Walls of Room 1 -->
+      <a-box position="0 2.5 -5" depth="0.1" height="5" width="10" src="path-to-your-wall-texture.jpg"></a-box> <!-- Back Wall -->
+      <a-box position="-5 2.5 0" depth="0.1" height="5" width="10" rotation="0 90 0" src="path-to-your-wall-texture.jpg"></a-box> <!-- Left Wall -->
+      <a-box position="5 2.5 0" depth="0.1" height="5" width="10" rotation="0 -90 0" src="path-to-your-wall-texture.jpg"></a-box> <!-- Right Wall -->
       
-      <!-- Door (just an opening in the front wall) -->
-      <a-box position="0 2.5 4.9" depth="0.1" height="2" width="3" color="#333"></a-box> <!-- Door Frame -->
-      
+      <!-- Front Wall with Opening -->
+      <a-box position="-3.5 2.5 5" depth="0.1" height="5" width="3" rotation="0 180 0" src="path-to-your-wall-texture.jpg"></a-box> <!-- Left Part of Front Wall -->
+      <a-box position="3.5 2.5 5" depth="0.1" height="5" width="3" rotation="0 180 0" src="path-to-your-wall-texture.jpg"></a-box> <!-- Right Part of Front Wall -->
+      <!-- Top Part of Front Wall (optional) -->
+      <a-box position="0 4.5 5" depth="0.1" height="1" width="4" rotation="0 180 0" src="path-to-your-wall-texture.jpg"></a-box> 
+
       <!-- Ceiling -->
       <a-plane position="0 5 0" rotation="90 0 0" width="10" height="10" color="#444"></a-plane>
-      <a-sound src="asylum_sound.mp3" autoplay="true" loop="true"></a-sound>
-      
+
       <!-- Lighting -->
       <a-light type="ambient" color="#555"></a-light> <!-- General low light for eerie atmosphere -->
       <a-light type="point" intensity="0.7" distance="15" position="0 4 0"></a-light> <!-- Dim central light -->
+
+      <!-- Spider Web -->
+      <a-entity position="0 3.5 -5" gltf-model="#spider_web" scale="0.05 0.05 0.05"></a-entity>
+
+      <!-- Second room -->
+      <a-box position="0 2.5 15" depth="0.1" height="5" width="10" src="path-to-your-wall-texture.jpg"></a-box> <!-- Back Wall -->
+      <a-box position="-5 2.5 10" depth="0.1" height="5" width="10" rotation="0 90 0" src="path-to-your-wall-texture.jpg"></a-box> <!-- Left Wall -->
+      <a-box position="5 2.5 10" depth="0.1" height="5" width="10" rotation="0 -90 0" src="path-to-your-wall-texture.jpg"></a-box> <!-- Right Wall -->
+      
+      <!-- Front Wall of Second Room -->
+      <a-box position="0 2.5 10" depth="0.1" height="5" width="10" rotation="0 180 0" src="path-to-your-wall-texture.jpg"></a-box> <!-- Front Wall -->
+
+      <!-- Ceiling of Second Room -->
+      <a-plane position="0 5 10" rotation="90 0 0" width="10" height="10" color="#444"></a-plane> 
+      <!-- Floor of Second Room -->
+      <a-plane position="0 0 10" rotation="-90 0 0" width="10" height="10" color="#222"></a-plane> 
     </a-scene>
   </body>
 </html>
