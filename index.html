@@ -28,6 +28,7 @@
     <a-scene fog="type: linear; color: #333; near: 1; far: 9">
       <a-assets>
         <a-asset-item id="monster_1" src="monster_1/scene.gltf"></a-asset-item>
+        <a-asset-item id="tombstones" src="tombstones/scene.gltf"></a-asset-item>
       </a-assets>
       
       <a-entity position="-2 0 0" gltf-model="#monster_1" scale="1 1 1"></a-entity>
@@ -60,9 +61,10 @@
       <a-box position="0 2.5 15" depth="0.1" height="5" width="10" src="path-to-your-wall-texture.jpg"></a-box> <!-- Back Wall -->
       <a-box position="-5 2.5 10" depth="0.1" height="5" width="10" rotation="0 90 0" src="path-to-your-wall-texture.jpg"></a-box> <!-- Left Wall -->
       <a-box position="5 2.5 10" depth="0.1" height="5" width="10" rotation="0 -90 0" src="path-to-your-wall-texture.jpg"></a-box> <!-- Right Wall -->
-      
-    
 
+
+      <a-entity position="2 0 12" gltf-model="#tombstones" scale="1 1 1"></a-entity> <!-- Tombstones -->
+      
       <!-- Ceiling of Second Room -->
       <a-plane position="0 5 10" rotation="90 0 0" width="10" height="10" color="#444"></a-plane> 
       <!-- Floor of Second Room -->
