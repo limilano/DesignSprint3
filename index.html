@@ -1,73 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>VR Ghost House</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Basic Scene - A-Frame">
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
   </head>
   <body>
-    <!-- Fog for spooky atmosphere -->
-    <a-scene fog="type: linear; color: #333; near: 1; far: 20">
+    <a-scene>
       <a-assets>
-        <a-asset-item id="monster_1" src="monster_1/scene.gltf"></a-asset-item>
-        <a-asset-item id="tombstones" src="tombstones/scene.gltf"></a-asset-item>
         <a-asset-item id="fireplace" src="Models/Fireplace with scary decorations.glb"></a-asset-item>
         <a-asset-item id="pumpkin_1" scale="0.29165 0.29165 0.29165" position="4.26862 0.32756 -3.24166" rotation="0 -46.65308846852728 0" src="Models/Scary Pumpkins.glb"></a-asset-item>
         <a-asset-item id="pumpkin_2" rotation="0 40.34711497531744 0" position="3.0262 0.00029 -4.57546" src="Models\Pumpkin “with Easter Egg note” 😂🖕.glb"></a-asset-item>
         <a-asset-item id="clown" src="Models\Scary Halloween face .glb"></a-asset-item>
         <a-asset-item id="zombie_1" rotation="0 -50.43002625402967 0" scale="0.57839 0.57839 0.57839" position="1.94084 0.5709 -3.00608" src="Models\zombie 1.glb"></a-asset-item>
+        <a-asset-item id="shed" src="shed/scene.gltf"></a-asset-item>
+        <a-asset-item id="barn" src="barn/scene.gltf"></a-asset-item>
       </a-assets>
-
-
-      <a-camera position="0 1.6 0" rotation="0 180 0" look-controls="enabled: true"></a-camera>
-
-        <!-- Monster facing the opposite direction -->
-      <a-entity id="monster" position="0 0 4" rotation="0 180 0" gltf-model="#monster_1" scale="1 1 1" visible="true">
-      </a-entity>
-
-
-      <!-- Floor -->
-      <a-plane position="0 0 0" rotation="-90 0 0" width="10" height="10" color="#222"></a-plane>
-      
-      <!-- Walls of Room 1 -->
-      <a-box position="0 2.5 -5" depth="0.1" height="5" width="10" src="path-to-your-wall-texture.jpg"></a-box> <!-- Back Wall -->
-      <a-box position="-5 2.5 0" depth="0.1" height="5" width="10" rotation="0 90 0" src="path-to-your-wall-texture.jpg"></a-box> <!-- Left Wall -->
-      <a-box position="5 2.5 0" depth="0.1" height="5" width="10" rotation="0 -90 0" src="path-to-your-wall-texture.jpg"></a-box> <!-- Right Wall -->
-      
-      <!-- Front Wall with Opening -->
-      <a-box position="-3.5 2.5 5" depth="0.1" height="5" width="3" rotation="0 180 0" src="path-to-your-wall-texture.jpg"></a-box> <!-- Left Part of Front Wall -->
-      <a-box position="3.5 2.5 5" depth="0.1" height="5" width="3" rotation="0 180 0" src="path-to-your-wall-texture.jpg"></a-box> <!-- Right Part of Front Wall -->
-      <!-- Top Part of Front Wall (optional) -->
-      <a-box position="0 4.5 5" depth="0.1" height="1" width="4" rotation="0 180 0" src="path-to-your-wall-texture.jpg"></a-box> 
-
-      <!-- Ceiling -->
-      <a-plane id="ceiling" position="0 2.9235 0" rotation="90 0 0" width="10" height="10" color="#444"></a-plane>
-
-      <a-sound src="asylum_sound.mp3" autoplay="true" loop="true"></a-sound> <!-- Scary Sound -->
-
-      <!-- Lighting -->
-      <a-light type="ambient" color="#555"></a-light> <!-- General low light for eerie atmosphere -->
-      <a-light type="point" intensity="0.7" distance="15" position="0 4 0"></a-light> <!-- Dim central light -->
-
-
-      <!-- Second room -->
-      <a-box position="0 2.5 15" depth="0.1" height="5" width="10" src="path-to-your-wall-texture.jpg"></a-box> <!-- Back Wall -->
-      <a-box position="-5 2.5 10" depth="0.1" height="5" width="10" rotation="0 90 0" src="path-to-your-wall-texture.jpg"></a-box> <!-- Left Wall -->
-      <a-box position="5 2.5 10" depth="0.1" height="5" width="10" rotation="0 -90 0" src="path-to-your-wall-texture.jpg"></a-box> <!-- Right Wall -->
-
-
-      <a-entity id="tombstones" position="2 0 12" gltf-model="#tombstones" scale="1 1 1"></a-entity> <!-- Tombstones -->
-      <a-entity id="fireplace_1" rotation="0 53.40940678870995 0" position="4.32 1.4958 -4.018" gltf-model="#fireplace" scale="1.48065 1.48065 1.48065"></a-entity> 
-      <a-entity id="pumpkin_1" position="4.26862 0.32756 -3.24166" scale="0.29165 0.29165 0.29165" rotation="0 -46.65308846852728 0" gltf-model="#pumpkin_1" scale="1 1 1"></a-entity> 
-      <a-entity id="pumpkin_2" position="3.0262 0.00029 -4.57546" rotation="0 40.34711497531744 0"gltf-model="#pumpkin_2" scale="1 1 1"></a-entity> 
-      <a-entity id="clown_1" rotation="0 -46.23253744690126 32.93934364207102" position="4.27604 2.53637 4.06888" gltf-model="#clown" scale="1 1 1"></a-entity> 
-      <a-entity id="zombie_1" position= "1.94084 0.5709 -3.00608" scale= "0.57839 0.57839 0.57839" rotation= "0 -50.43002625402967 0" gltf-model="#zombie_1" scale="1 1 1"></a-entity> 
-      
-      <!-- Ceiling of Second Room -->
-      <a-plane position="0 5 10" rotation="90 0 0" width="10" height="10" color="#444"></a-plane> 
-      <!-- Floor of Second Room -->
-      <a-plane position="0 0 10" rotation="-90 0 0" width="10" height="10" color="#222"></a-plane> 
+      <a-entity environment="preset: forest"></a-entity>
+      <a-entity gltf-model="#shed" scale="100 100 100" position="0 0 0"></a-entity>
+      <a-entity gltf-model="#barn" position="20 0 10"></a-entity>
     </a-scene>
   </body>
 </html>
