@@ -12,7 +12,13 @@
       <a-assets>
         <a-asset-item id="monster_1" src="monster_1/scene.gltf"></a-asset-item>
         <a-asset-item id="tombstones" src="tombstones/scene.gltf"></a-asset-item>
+        <a-asset-item id="fireplace" src="Models/Fireplace with scary decorations.glb"></a-asset-item>
+        <a-asset-item id="pumpkin_1" scale="0.29165 0.29165 0.29165" position="4.26862 0.32756 -3.24166" rotation="0 -46.65308846852728 0" src="Models/Scary Pumpkins.glb"></a-asset-item>
+        <a-asset-item id="pumpkin_2" rotation="0 40.34711497531744 0" position="3.0262 0.00029 -4.57546" src="Models\Pumpkin “with Easter Egg note” 😂🖕.glb"></a-asset-item>
+        <a-asset-item id="clown" src="Models\Scary Halloween face .glb"></a-asset-item>
+        <a-asset-item id="zombie_1" rotation="0 -50.43002625402967 0" scale="0.57839 0.57839 0.57839" position="1.94084 0.5709 -3.00608" src="Models\zombie 1.glb"></a-asset-item>
       </a-assets>
+
 
       <a-camera position="0 1.6 0" rotation="0 180 0" look-controls="enabled: true"></a-camera>
 
@@ -36,7 +42,7 @@
       <a-box position="0 4.5 5" depth="0.1" height="1" width="4" rotation="0 180 0" src="path-to-your-wall-texture.jpg"></a-box> 
 
       <!-- Ceiling -->
-      <a-plane position="0 5 0" rotation="90 0 0" width="10" height="10" color="#444"></a-plane>
+      <a-plane id="ceiling" position="0 2.9235 0" rotation="90 0 0" width="10" height="10" color="#444"></a-plane>
 
       <a-sound src="asylum_sound.mp3" autoplay="true" loop="true"></a-sound> <!-- Scary Sound -->
 
@@ -51,7 +57,12 @@
       <a-box position="5 2.5 10" depth="0.1" height="5" width="10" rotation="0 -90 0" src="path-to-your-wall-texture.jpg"></a-box> <!-- Right Wall -->
 
 
-      <a-entity position="2 0 12" gltf-model="#tombstones" scale="1 1 1"></a-entity> <!-- Tombstones -->
+      <a-entity id="tombstones" position="2 0 12" gltf-model="#tombstones" scale="1 1 1"></a-entity> <!-- Tombstones -->
+      <a-entity id="fireplace_1" rotation="0 53.40940678870995 0" position="4.32 1.4958 -4.018" gltf-model="#fireplace" scale="1.48065 1.48065 1.48065"></a-entity> 
+      <a-entity id="pumpkin_1" position="4.26862 0.32756 -3.24166" scale="0.29165 0.29165 0.29165" rotation="0 -46.65308846852728 0" gltf-model="#pumpkin_1" scale="1 1 1"></a-entity> 
+      <a-entity id="pumpkin_2" position="3.0262 0.00029 -4.57546" rotation="0 40.34711497531744 0"gltf-model="#pumpkin_2" scale="1 1 1"></a-entity> 
+      <a-entity id="clown_1" rotation="0 -46.23253744690126 32.93934364207102" position="4.27604 2.53637 4.06888" gltf-model="#clown" scale="1 1 1"></a-entity> 
+      <a-entity id="zombie_1" position= "1.94084 0.5709 -3.00608" scale= "0.57839 0.57839 0.57839" rotation= "0 -50.43002625402967 0" gltf-model="#zombie_1" scale="1 1 1"></a-entity> 
       
       <!-- Ceiling of Second Room -->
       <a-plane position="0 5 10" rotation="90 0 0" width="10" height="10" color="#444"></a-plane> 
