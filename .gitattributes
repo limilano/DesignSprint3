@@ -1,0 +1,2 @@
+barn/** filter=lfs diff=lfs merge=lfs -text
+shed/** filter=lfs diff=lfs merge=lfs -text
