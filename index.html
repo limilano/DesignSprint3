@@ -10,17 +10,18 @@
     <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
   </head>
   <body>
-    <a-scene>
+    <a-scene fog="type: exponential; color: #000; density: 0.3;">
       <a-assets>
         <a-asset-item id="fireplace" src="Models/Fireplace with scary decorations.glb"></a-asset-item>
         <a-asset-item id="pumpkin_1"  src="Models/Scary Pumpkins.glb"></a-asset-item>
-        <a-asset-item id="pumpkin_2" position="3.0262 0.00029 0.46203"  src="Models\Pumpkin “with Easter Egg note” 😂🖕.glb"></a-asset-item>
+        <a-asset-item id="pumpkin_2"   src="Models\Pumpkin “with Easter Egg note” 😂🖕.glb"></a-asset-item>
         <a-asset-item id="clown" src="Models\Scary Halloween face .glb"></a-asset-item>
-        <a-asset-item id="zombie_1" rotation="0 -50.43002625402967 0" scale="0.57839 0.57839 0.57839" position="1.94084 0.5709 -3.00608" src="Models\zombie 1.glb"></a-asset-item>
+        <a-asset-item id="zombie_1" src="Models\zombie 1.glb"></a-asset-item>
         <a-asset-item id="shed" src="shed/scene.gltf"></a-asset-item>
         <a-asset-item id="barn" src="barn/scene.gltf"></a-asset-item>
       </a-assets>
-      <a-entity environment="preset: forest"></a-entity>
+
+      <a-entity environment="preset: forest; fog:.05; skyColor: #000000; horizonColor:#000; groundColor:#171605; groundColor2:#071703"></a-entity>
       <a-entity gltf-model="#shed" scale="100 100 100" position="0 0 0"></a-entity>
       <a-entity gltf-model="#barn" position="20 0 10"></a-entity>
     </a-scene>
