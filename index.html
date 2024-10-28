@@ -11,19 +11,48 @@
   </head>
   <body>
     <a-scene fog="type: exponential; color: #000; density: 0.3;">
+    <!-- <a-scene> -->
       <a-assets>
-        <a-asset-item id="fireplace" src="Models/Fireplace with scary decorations.glb"></a-asset-item>
-        <a-asset-item id="pumpkin_1"  src="Models/Scary Pumpkins.glb"></a-asset-item>
-        <a-asset-item id="pumpkin_2"   src="Models\Pumpkin “with Easter Egg note” 😂🖕.glb"></a-asset-item>
-        <a-asset-item id="clown" src="Models\Scary Halloween face .glb"></a-asset-item>
-        <a-asset-item id="zombie_1" src="Models\zombie 1.glb"></a-asset-item>
         <a-asset-item id="shed" src="shed/scene.gltf"></a-asset-item>
         <a-asset-item id="barn" src="barn/scene.gltf"></a-asset-item>
+        <!-- https://www.cgtrader.com/free-3d-models/furniture/chair/old-wooden-vintage-bench -->
+        <a-asset-item id="bench" src="Models\bench\Vintage_Bench.glb"></a-asset-item>
+        <!-- https://www.cgtrader.com/product/interior/old-chair-ae0f722a-7eea-4811-929f-5fd43c762ad4 -->
+        <a-asset-item id="chair" src="Models\chair\Old_Chair.glb"></a-asset-item>
+        <!-- https://www.cgtrader.com/3d-model/barrel-v1-low-poly -->
+        <a-asset-item id="barrels" src="Models\barrels.glb"></a-asset-item>
+        <!-- https://poly.cam/capture/d0a303b8-4475-4195-b62a-c6305f44c0da -->
+        <a-asset-item id="scarypump" src="Models\scarypumpkin.glb"></a-asset-item>
+        <!-- https://poly.cam/capture/5387b339-3f4f-4d6c-a781-a18bba210732 -->
+        <a-asset-item id="clown" src="Models\clown.glb"></a-asset-item>
+        <!-- https://poly.cam/capture/2f69bbc9-cd94-4c0e-a4ef-fa9338595c33 -->
+        <a-asset-item id="tallpump" src="Models\tallpumpkin.glb"></a-asset-item>
+        <!-- https://www.cgtrader.com/free-3d-models/various/various-models/wooden-box-free-low-poly-pbr -->
+        <a-asset-item id="woodbox" src="Models\woodbox.glb"></a-asset-item>
+        <!-- https://poly.cam/capture/4658a691-4f40-4c01-a678-437c230f5241 -->
+        <a-asset-item id="zombie1" src="Models\zombie 1.glb"></a-asset-item>
       </a-assets>
 
       <a-entity environment="preset: forest; fog:.05; skyColor: #000000; horizonColor:#000; groundColor:#171605; groundColor2:#071703"></a-entity>
-      <a-entity gltf-model="#shed" scale="100 100 100" position="0 0 0"></a-entity>
-      <a-entity gltf-model="#barn" position="20 0 10"></a-entity>
+      
+      <!-- buildings -->
+      <a-entity id="shed_id" rotation="0 -47.825 0"gltf-model="#shed" scale="100 100 100" position="-6.60148 -0.44091 -5.64656"></a-entity>
+      <a-entity id="barn_id" rotation="0 -108.47122385857719 0" gltf-model="#barn" position="12.24464 0 6.3069"></a-entity>
+
+      <!-- items -->
+      <a-entity id="chair1" rotation="0 -161.74369373425088 0" gltf-model="#chair" position="-6.65088 0 -2.08648"></a-entity>
+      <a-entity id="chair2" rotation="-20.878009096772068 -7.648413607201359 -93.6917775331776" gltf-model="#chair" position="-5.82879 0.3098 -2.5265"></a-entity>
+      <a-entity id="bench1" rotation="0 35.62365091225894 0" gltf-model="#bench" position="9.89918 0 7.36025"></a-entity>
+      <a-entity id="barrels1" rotation="0 -49.398129264999056 0" scale="0.31201 0.31201 0.31201" gltf-model="#barrels" position="8.19725 0 0.67983"></a-entity>
+      <a-entity id="woodbox1" scale="0.16988 0.16988 0.16988" gltf-model="#woodbox" position="-5.94691 0.03718 0.6785"></a-entity>
+      <a-entity id="pump1" gltf-model="#tallpump" position="7.5123 0.02154 2.93461"></a-entity>
+      <a-entity id="pump2" scale="0.39291 0.39291 0.39291" rotation="0 -136.08549775270234 0" gltf-model="#scarypump" position="5.75208 0.32988 6.24338"></a-entity>
+
+      <!-- monsters -->
+      <a-entity id="zomb1" rotation="0 94.50079393990234 0" gltf-model="#zombie1" position="-1.75267 0.99136 -5.9609"></a-entity>
+      <a-entity id="clown1" rotation="0 133.8670051699558 0" gltf-model="#clown" position="-5.95694 0.89107 1.22241"></a-entity>
+
+
     </a-scene>
   </body>
 </html>
