@@ -8,7 +8,7 @@
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
-    <script src="jumpscare.js"></script>
+    <script src="automove.js"></script>
   </head>
   <body>
     <a-scene fog="type: exponential; color: #000; density: 0.3;">
@@ -36,16 +36,17 @@
         <a-asset-item id="spider" src="Models\bigspider.glb"></a-asset-item>
       </a-assets>
 
-      <a-entity camera look-controls wasd-controls="acceleration:7" position="0 1.6 0" ></a-entity>
+      <a-entity camera look-controls auto-move-forward  position="0 1.2 0" ></a-entity>
+      
       <a-entity environment="preset: forest; fog:.05; skyColor: #000000; horizonColor:#000; groundColor:#171605; groundColor2:#071703"></a-entity>
       
       <!-- buildings -->
-      <a-entity id="shed_id" rotation="0 -47.825 0"gltf-model="#shed" scale="100 100 100" position="-6.60148 -0.44091 -5.64656"></a-entity>
+      <a-entity id="shed_id" rotation="0 -47.825 0"gltf-model="#shed" scale="100 100 100" position="-6.60148 -0.34245 -5.64656"></a-entity>
       <a-entity id="barn_id" rotation="0 -108.47122385857719 0" gltf-model="#barn" position="12.24464 0 6.3069"></a-entity>
 
       <!-- items -->
       <a-entity id="chair1" rotation="0 -161.74369373425088 0" gltf-model="#chair" position="-6.65088 0 -2.08648"></a-entity>
-      <a-entity id="chair2" rotation="-20.878009096772068 -7.648413607201359 -93.6917775331776" gltf-model="#chair" position="-5.82879 0.3098 -2.5265"></a-entity>
+      <a-entity id="chair2" rotation="-20.878 -7.648 -93.692" gltf-model="#chair" position="-5.829 0.31 -2.526"></a-entity>
       <a-entity id="bench1" rotation="0 35.62365091225894 0" gltf-model="#bench" position="9.89918 0 7.36025"></a-entity>
       <a-entity id="barrels1" rotation="0 -49.398129264999056 0" scale="0.31201 0.31201 0.31201" gltf-model="#barrels" position="8.19725 0 0.67983"></a-entity>
       <a-entity id="woodbox1" scale="0.16988 0.16988 0.16988" gltf-model="#woodbox" position="-5.94691 0.03718 0.6785"></a-entity>
