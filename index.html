@@ -11,7 +11,7 @@
     <script src="automove.js"></script>
   </head>
   <body>
-    <a-scene fog="type: exponential; color: #000; density: 0.3;">
+    <a-scene fog="type: exponential; color: #111; density: 0.25;">
     <!-- <a-scene> -->
       <a-assets>
         <a-asset-item id="shed" src="shed/scene.gltf"></a-asset-item>
@@ -38,7 +38,7 @@
 
       <a-entity camera look-controls auto-move-forward  position="0 1.2 0" ></a-entity>
       
-      <a-entity environment="preset: forest; fog:.05; skyColor: #000000; horizonColor:#000; groundColor:#171605; groundColor2:#071703"></a-entity>
+      <a-entity environment="preset: forest; fog:.05; skyColor: #000000; horizonColor:#000; groundColor:#212006; groundColor2:#071703"></a-entity>
       
       <!-- buildings -->
       <a-entity id="shed_id" rotation="0 -47.825 0"gltf-model="#shed" scale="100 100 100" position="-6.60148 -0.34245 -5.64656"></a-entity>

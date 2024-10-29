@@ -1,3 +1,6 @@
+
+var jumpscare = false;
+
 AFRAME.registerComponent('auto-move-forward', {
     schema: {
       speed: { type: 'number', default: 0.015 } // Movement speed
@@ -21,6 +24,21 @@ AFRAME.registerComponent('auto-move-forward', {
         y: position.y,
         z: position.z + dz
       });
+
+      const newPosition = this.el.getAttribute('position');
+      if(!jumpscare && (newPosition.x > 8.8 && newPosition.x < 11.6) && (newPosition.z > 4.2 && newPosition.z < 7.2)) {
+        jumpscare = true;
+        JumpscareAnim();
+      }
     }
   });
+
+  function JumpscareAnim() {
+    const spider = document.querySelector("#spider1");
+    spider.object3D.position.x = 11.07;
+    spider.object3D.position.y = .235;
+    spider.object3D.position.z = 5.948;
+    // spider.setAttribute("position", { x: 11.07, y: .235, z: 5.948 });
+
+  }
   
