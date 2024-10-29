@@ -33,6 +33,7 @@ AFRAME.registerComponent('auto-move-forward', {
     }
   });
 
+  
   function JumpscareAnim() {
     const spider = document.querySelector("#spider1");
     spider.object3D.position.x = 11.07;
