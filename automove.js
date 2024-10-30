@@ -40,8 +40,8 @@ AFRAME.registerComponent('auto-move-forward', {
     spider.object3D.position.y = .235;
     spider.object3D.position.z = 5.948;
 
-    
-    // document.querySelector('#jumpsound').components.sound.playSound();
+
+    document.querySelector('#jumpsound').components.sound.playSound();
     // spider.setAttribute("position", { x: 11.07, y: .235, z: 5.948 });
 
   }
